@@ -1,6 +1,6 @@
 //Início da codificação dos inputs de username e senha
 const inputs = document.querySelectorAll('.input');
-const button = document.getElementsByClassName('.loginButton');
+const button = document.querySelectorAll('.loginButton');
 
 const handleFocus = ({target}) =>{
     const span = target.previousElementSibling;
@@ -27,14 +27,13 @@ const handleFocusOut = ({target}) =>{
 // o Botão de logar vai mudar de estilização de acordo com os values de username e senha
 
 const handleChange = () => {
-    const [username, password] = inputs;
-    
-    console.log('username ='+username.value);
-    console.log('senha ='+password.value);
+    const [username, password] = inputs;   
     if(username.value && password.value.length >= 8){
         console.log('passou');
         
-        button.removeAttribute('disabled');
+        button[0].removeAttribute('disabled');
+    }else{
+        button[0].setAttribute('disabled','');
     }
    
 
